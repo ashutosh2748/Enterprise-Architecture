@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import cs544.excercise03_2.part2.Publisher;
 @Entity
 public class Book {
 @Id
@@ -17,6 +19,7 @@ private String ISBN;
 private String author;
 private double price;
 private java.util.Date publish_date;
+private Publisher publisher;
 
 
 @Override
