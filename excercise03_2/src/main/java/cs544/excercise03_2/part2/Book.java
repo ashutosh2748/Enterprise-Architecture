@@ -1,4 +1,4 @@
-package cs544.assignment2;
+package cs544.excercise03_2.part2;
 
 import java.util.Date;
 
