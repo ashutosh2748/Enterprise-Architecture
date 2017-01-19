@@ -24,6 +24,11 @@
 		<!-- Mapping files -->
 		
 		<mapping class="cs544.excercise04_1.Laptop" />
-		<mapping class="cs544.excercise04_1.Employee"/>
+		<mapping class="cs544.excercise04_1.Employee" />
+		<mapping class="cs544.excercise04_1.Flight" />
+		<mapping class="cs544.excercise04_1.Passenger" />
+		<mapping class="cs544.excercise04_1.School" />
+		<mapping class="cs544.excercise04_1.Student" />
+		
 	</session-factory>
 </hibernate-configuration>
