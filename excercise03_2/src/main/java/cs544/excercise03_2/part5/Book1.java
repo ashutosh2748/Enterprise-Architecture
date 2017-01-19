@@ -1,18 +1,19 @@
-package cs544.excercise03_2.part2;
+package cs544.excercise03_2.part5;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import cs544.excercise03_2.part2.Publisher;
 @Entity
-public class Book {
+public class Book1 {
 @Id
 @GeneratedValue
 private int id;
@@ -22,9 +23,8 @@ private String ISBN;
 private String author;
 private double price;
 private java.util.Date publish_date;
-@ManyToOne(cascade=CascadeType.ALL)
-@JoinTable(name="Book_Publisher")
-private Publisher publisher;
+@OneToMany(mappedBy="book")
+private List<Reservation1> reservations;
 
 
 @Override
@@ -32,7 +32,7 @@ public String toString() {
 	return "Book [title=" + title + ", ISBN=" + ISBN + ", author=" + author + ", price=" + price + ", publish_date="
 			+ publish_date + "]";
 }
-public Book(String title, String iSBN, String author, double price, Date publish_date) {
+public Book1(String title, String iSBN, String author, double price, Date publish_date) {
 	super();
 	
 	this.title = title;
@@ -41,7 +41,7 @@ public Book(String title, String iSBN, String author, double price, Date publish
 	this.price = price;
 	this.publish_date = publish_date;
 }
-Book(){
+Book1(){
 	
 }
 

@@ -1,4 +1,4 @@
-package cs544.excercise03_2.part1;
+package cs544.excercise03_2.part6;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -33,16 +33,21 @@ public class AppDepartment {
           //  List<Book> books=new ArrayList();
         //   Date d=new Date();
         //   d.setYear(1998);
-        Employee e=new Employee();
+        Employee1 e=new Employee1();
         e.setName("Ashutosh Ghimire");
         session.persist(e);
-        Department d=new Department();
+        Department1 d=new Department1();
         d.name="Faculty";
         d.getEmployees().add(e);
-        Employee p=new Employee();
+        Employee1 p=new Employee1();
         p.setName("Arvin");
         d.getEmployees().add(p);
         session.persist(d);
+        Office ofice=new Office();
+        ofice.setBuilding("Mclaughing");
+        ofice.setRoomNum(109);
+        ofice.getEmployees().add(e);
+        session.persist(ofice);
 
         //session.persist(a);
 
@@ -70,9 +75,13 @@ public class AppDepartment {
             session = sessionFactory.openSession();
           //  tx = session.beginTransaction();
             @SuppressWarnings("unused")
-			List<Department> departmentlist=session.createQuery("from Department").list();
-            for(Department b:departmentlist){
+			List<Office> officelist=session.createQuery("from Office").list();
+            for(Office b:officelist){
             	System.out.println(b.toString());
+            	for(Employee1 e:b.getEmployees()){
+            		System.out.println(e.toString());
+            		//for(k:e.)
+            	}
             }
           //  tx.
     		System.out.println("************************************Stage 2 Complete*******************************************");

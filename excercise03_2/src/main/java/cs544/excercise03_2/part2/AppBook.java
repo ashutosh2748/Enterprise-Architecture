@@ -13,7 +13,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class AppDepartment {
+public class AppBook {
 	private static final SessionFactory sessionFactory;
 	private static final ServiceRegistry serviceRegistry;
 	static{
@@ -40,8 +40,8 @@ public class AppDepartment {
         Publisher p=new Publisher();
         p.setName("Oxford");
         //.name="Faculty";
-        p.getBooks().add(b);
-        p.getBooks().add(b);
+      //  p.getBooks().add(b);
+    //    p.getBooks().add(b);
        
         session.persist(p);
 
@@ -71,9 +71,11 @@ public class AppDepartment {
             session = sessionFactory.openSession();
           //  tx = session.beginTransaction();
             @SuppressWarnings("unused")
-			List<Publisher> publisher=session.createQuery("from publisher").list();
-            for(Publisher b:publisher){
+			List<Book> books=session.createQuery("from Book").list();
+            for(Book b:books){
             	System.out.println(b.toString());
+            	
+            	
             }
           //  tx.
     		System.out.println("************************************Stage 2 Complete*******************************************");

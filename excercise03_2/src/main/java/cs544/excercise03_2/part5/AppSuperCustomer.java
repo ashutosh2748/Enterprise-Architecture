@@ -1,5 +1,7 @@
-package cs544.excercise03_2.part1;
+package cs544.excercise03_2.part5;
 
+import java.sql.Time;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,7 +15,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class AppDepartment {
+public class AppSuperCustomer {
 	private static final SessionFactory sessionFactory;
 	private static final ServiceRegistry serviceRegistry;
 	static{
@@ -31,26 +33,23 @@ public class AppDepartment {
             session = sessionFactory.openSession();
             tx = session.beginTransaction();
           //  List<Book> books=new ArrayList();
-        //   Date d=new Date();
-        //   d.setYear(1998);
-        Employee e=new Employee();
-        e.setName("Ashutosh Ghimire");
-        session.persist(e);
-        Department d=new Department();
-        d.name="Faculty";
-        d.getEmployees().add(e);
-        Employee p=new Employee();
-        p.setName("Arvin");
-        d.getEmployees().add(p);
-        session.persist(d);
+           Date d=new Date();
+         //  d.setYear(1998);
+        Customer1 c=new Customer1();
+        c.setName("Ashutosh");
+      //  e.setlName("Ghimire");
+        session.persist(c);
+        Reservation1 r=new Reservation1();
+        r.setCustomer(c);
+        r.setDate(d);
+        Book1 b=new Book1();
+        b.setAuthor(c.getName());
+        
+        
+        
+        session.persist(b);
 
-        //session.persist(a);
-
-		//session.persist(b);
-		//session.persist(c);
-		// aId=a.getId();
-		// bId=b.getId();
-		// cId=c.getId();
+       
 		System.out.println("************************************Stage 1 Complete*******************************************");
 		tx.commit();
 		
@@ -70,9 +69,10 @@ public class AppDepartment {
             session = sessionFactory.openSession();
           //  tx = session.beginTransaction();
             @SuppressWarnings("unused")
-			List<Department> departmentlist=session.createQuery("from Department").list();
-            for(Department b:departmentlist){
+			List<Reservation1> rlist=session.createQuery("from Reservation").list();
+            for(Reservation1 b:rlist){
             	System.out.println(b.toString());
+            	System.out.println(b.getCustomer().getName());
             }
           //  tx.
     		System.out.println("************************************Stage 2 Complete*******************************************");

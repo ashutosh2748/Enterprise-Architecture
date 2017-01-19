@@ -1,23 +1,26 @@
-package cs544.excercise03_2.part1;
+package cs544.excercise03_2.part6;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Employee {
+public class Employee1 {
 	
 	@Id
 	@GeneratedValue
 	long employeeNumber;
 	String name;
-	@ManyToOne()
-	Department department;
-	Employee(){
+	@ManyToOne(cascade=CascadeType.ALL)
+	Department1 department;
+	@ManyToOne(cascade=CascadeType.ALL)
+	Office office;
+	Employee1(){
 		
 	}
-	public Employee(long employeeNumber, String name) {
+	public Employee1(long employeeNumber, String name) {
 		this.employeeNumber = employeeNumber;
 		this.name = name;
 	}

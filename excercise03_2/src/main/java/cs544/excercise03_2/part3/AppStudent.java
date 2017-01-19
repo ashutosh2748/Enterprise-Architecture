@@ -1,4 +1,4 @@
-package cs544.excercise03_2.part1;
+package cs544.excercise03_2.part3;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -13,7 +13,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class AppDepartment {
+public class AppStudent {
 	private static final SessionFactory sessionFactory;
 	private static final ServiceRegistry serviceRegistry;
 	static{
@@ -33,15 +33,16 @@ public class AppDepartment {
           //  List<Book> books=new ArrayList();
         //   Date d=new Date();
         //   d.setYear(1998);
-        Employee e=new Employee();
-        e.setName("Ashutosh Ghimire");
+        Student e=new Student();
+        e.setfName("Ashutosh");
+        e.setlName("Ghimire");
         session.persist(e);
-        Department d=new Department();
-        d.name="Faculty";
-        d.getEmployees().add(e);
-        Employee p=new Employee();
-        p.setName("Arvin");
-        d.getEmployees().add(p);
+        Course d=new Course();
+        d.setName("EA");
+       // d.getEmployees().add(e);
+       // Employee p=new Employee();
+       // p.setName("Arvin");
+       // d.getEmployees().add(p);
         session.persist(d);
 
         //session.persist(a);
@@ -70,8 +71,8 @@ public class AppDepartment {
             session = sessionFactory.openSession();
           //  tx = session.beginTransaction();
             @SuppressWarnings("unused")
-			List<Department> departmentlist=session.createQuery("from Department").list();
-            for(Department b:departmentlist){
+			List<Student> studentlist=session.createQuery("from Student").list();
+            for(Student b:studentlist){
             	System.out.println(b.toString());
             }
           //  tx.

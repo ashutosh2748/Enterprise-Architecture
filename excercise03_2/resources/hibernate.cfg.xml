@@ -24,6 +24,19 @@
 		<!-- Mapping files -->
 		<mapping class="cs544.excercise03_2.part1.Department" />
 		<mapping class="cs544.excercise03_2.part1.Employee" />
+		<mapping class="cs544.excercise03_2.part2.Publisher" />
+		<mapping class="cs544.excercise03_2.part2.Book"/>
+		<mapping class="cs544.excercise03_2.part3.Student" />
+		<mapping class="cs544.excercise03_2.part3.Course" />
+		<mapping class="cs544.excercise03_2.part4.Reservation" />
+		<mapping class="cs544.excercise03_2.part4.Customer" />
+		<mapping class="cs544.excercise03_2.part5.Book1" />
+		<mapping class="cs544.excercise03_2.part5.Reservation1" />
+		<mapping class="cs544.excercise03_2.part5.Customer1" />
+		<mapping class="cs544.excercise03_2.part6.Department1" />
+		<mapping class="cs544.excercise03_2.part6.Employee1" />
+		<mapping class="cs544.excercise03_2.part6.Office" />
+		
 		
 	</session-factory>
 </hibernate-configuration>

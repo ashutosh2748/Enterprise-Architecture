@@ -6,33 +6,29 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 @Entity
 public class Publisher {
 @Id
 @GeneratedValue
 long id;
 String name;
-List<Book> books;
+//@OneToMany()
+//@JoinColumn(foreignKey=)
 
-public List<Book> getBooks() {
-	return books;
-}
+//@JoinTable()
+//List<Book> books;
 
-
-public void setBooks(List<Book> books) {
-	this.books = books;
-}
 
 
 Publisher(){
-	books=new ArrayList();
+	
 }
 
 
-public Publisher(String name, List<Book> books) {
-	this.name = name;
-	this.books = books;
-}
+
 
 
 public long getId() {

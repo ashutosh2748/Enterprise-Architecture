@@ -13,6 +13,8 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import cs544.assignment2.Book;
+
 public class AppBook {
 	private static final SessionFactory sessionFactory;
 	private static final ServiceRegistry serviceRegistry;

@@ -1,30 +1,23 @@
-package cs544.excercise03_2.part2;
+package cs544.assignment2;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-
-import cs544.excercise03_2.part2.Publisher;
 @Entity
 public class Book {
 @Id
 @GeneratedValue
 private int id;
 private String title;
-//@Column(nullable=false)
+@Column(nullable=false)
 private String ISBN;
 private String author;
 private double price;
 private java.util.Date publish_date;
-@ManyToOne(cascade=CascadeType.ALL)
-@JoinTable(name="Book_Publisher")
-private Publisher publisher;
+
 
 
 @Override
